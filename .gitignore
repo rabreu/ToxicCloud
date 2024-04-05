@@ -28,4 +28,3 @@ output/txt/*.*
 output/png/*.*
 target/
 *.iml
-*.png
