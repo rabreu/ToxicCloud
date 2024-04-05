@@ -29,7 +29,7 @@ public class ToxicCloud {
     final int WIDGTH = 1000;
     final int HEIGHT = 800;
     final String STOPWORDS_FILE = "src/main/resources/stopwords.txt";
-    final String IMAGE_OUTPUT = "wordcloud_" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".png";
+    final String IMAGE_OUTPUT = "toxiccloud_" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".png";
 
     public void start (String inputFile) {
         try {
@@ -71,7 +71,8 @@ public class ToxicCloud {
 
             List<WordFrequency> wordFrequencies = frequencyAnalyzer.load(phrases);
             LayeredWordCloud  toxicCloud = new LayeredWordCloud(2, new Dimension(WIDGTH, HEIGHT), CollisionMode.PIXEL_PERFECT);
-            toxicCloud.setPadding(1, 1);
+            toxicCloud.setPadding(0, 1);
+            toxicCloud.setPadding(1,1);
             toxicCloud.setBackgroundColor(new Color(0xFF2F303B, true));
             toxicCloud.setBackground(0, new PixelBoundaryBackground(Files.newInputStream(Paths.get("src/main/resources/linkedin_fg.png"))));
             toxicCloud.setBackground(1, new PixelBoundaryBackground(Files.newInputStream(Paths.get("src/main/resources/linkedin_bg.png"))));
