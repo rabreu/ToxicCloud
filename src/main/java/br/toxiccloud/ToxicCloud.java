@@ -47,7 +47,7 @@ public class ToxicCloud {
 
                 doc.body().getElementsByTag("tbody")
                         .forEach(e -> e.getElementsByTag("tr")
-                                .forEach(tr -> tr.getElementsByClass("s3")
+                                .forEach(tr -> tr.getElementsByClass("s2")
                                         .forEach(td -> {
                                             try {
                                                 if(StringUtils.isNotBlank(td.text())) {
